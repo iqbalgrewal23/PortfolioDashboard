@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 Admin Dashboard
+
+  h2 Projects
+  ul
+    each project in projects
+      li #{project.title} | 
+         a(href=`/admin/delete-project/${project._id}`) Delete
+
+  a(href="/admin/add-project") Add New Project
+
+  h2 Skills
+  ul
+    each skill in skills
+      li #{skill.name} (#{skill.level}) | 
+         a(href=`/admin/delete-skill/${skill._id}`) Delete
+
+  a(href="/admin/add-skill") Add New Skill
+    
